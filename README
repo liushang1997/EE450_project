@@ -1,0 +1,22 @@
+Name: Shang Liu
+
+Student ID: 6048503762
+
+Assignment implementation: In this assignment, I used C/C++ socket programming to build a multi-server and multi-client program which runs on different ports of the localhost. This project is able to recommend a friend for a client by searching a relationship graph on a specific backend server. To get to the correct backend server, a main server is also build for routing.
+
+Code files structure: 
+client.cpp: receive the query from command line and send it to the main server.
+servermain.cpp: be able to get multiple client requests and route them to correct backend servers; get the recommendation result from a backend serve and return it to client.
+serverA.cpp: read and store local data file './data1.txt' and compute the most possible friend for a given person.
+serverA.cpp: read and store local data file './data2.txt' and compute the most possible friend for a given person.
+
+The format of all the messages exchanged: 
+client ---> mainserver: a char[] in C containing the query message in a format of "<country name> <id>". Example: "China 8964".  
+mainserver --> client: a char[] in C containing the result message in a format of "<recommended id>/<error code>". Example: "-2" (an error code meaning user does not exsit) or "-1" (an error code meaning country does not exist) or an recommended user id like "1954". 
+mainserver ---> serverA/serverB: a char[] in C containing the query message in a format of "<country name> <id>". Example: "Western-NorthKorea 8964".
+serverA/serverB: a char[] in C containing the recommnedation result in a format of "<<recommended id>/<error code>>". Example: "-1" (an error code meaning country does not exist).
+
+Idiosyncrasy: Not available
+
+Reused Code: Not available
+
